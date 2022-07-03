@@ -30,10 +30,10 @@ const MainNavbar = () => {
 							</NavDropdown> */}
 						</Nav>
 						<Nav>
-							<Link className="nav-link " to="/follow" target="_blank">
+							<Link className="nav-link " to="/follow" target="_blank" rel="noreferrer">
 								Follow us!
 							</Link>
-							<Link className="nav-link " to="/support" target="_blank">
+							<Link className="nav-link " to="/support" target="_blank" rel="noreferrer">
 								Support us!
 							</Link>
 						</Nav>
