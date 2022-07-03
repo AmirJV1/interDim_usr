@@ -1,0 +1,20 @@
+.archive-body {
+	background-color: #52796f95;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 20px 0 20px 0;
+}
+.archive-dates {
+	display: flex;
+	justify-content: space-between;
+}
+.archive-dimension {
+	font-size: 120%;
+}
+
+@media (max-width: 500px) {
+	.archive-dates {
+		display: flex;
+		flex-direction: column;
+	}
+}

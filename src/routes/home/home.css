@@ -1,0 +1,27 @@
+.home-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.main-title {
+	text-align: center;
+}
+.warning-container {
+	text-align: center;
+}
+.warning-container h2 {
+	color: #ff0000;
+}
+.warning-container i {
+	color: #ff0000;
+}
+.btn-continue {
+	margin: 20px auto;
+}
+.btn-continue:hover {
+	cursor: pointer;
+}
+.btn-continue {
+	color: green;
+}

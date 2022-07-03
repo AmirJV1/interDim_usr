@@ -1,0 +1,12 @@
+*::selection {
+	background-color: rgba(127, 255, 212, 0.682);
+	color: #000000;
+}
+
+html {
+	background-color: rgb(33, 37, 41) !important;
+	color: #fff;
+}
+* {
+	white-space: pre-wrap !important;
+}

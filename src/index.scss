@@ -1,0 +1,13 @@
+/* The following line can be included in a src/App.scss */
+
+@import '~bootstrap/scss/bootstrap';
+
+$theme-colors: (
+	'info': tomato,
+	'danger': teal,
+	'body-bg': #212529
+);
+$body-bg: #212529;
+$body-color: #fff;
+/* import bootstrap to set changes */
+@import '~bootstrap/scss/bootstrap';
