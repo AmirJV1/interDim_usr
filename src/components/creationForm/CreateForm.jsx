@@ -8,9 +8,11 @@ const CreateForm = () => {
 	const [dTitle, setDTitle] = useState('');
 	const [bCreation, setBCreation] = useState('');
 	const [dMsg, setDMsg] = useState('');
+	const [autor, setAutor] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 	const [isError, setIsError] = useState(false);
 	const [isSuccess, setIsSuccess] = useState(false);
+	const [postId, setPostId] = useState('');
 
 	const url = `${process.env.REACT_APP_API_URL}archive/create`;
 
@@ -18,10 +20,12 @@ const CreateForm = () => {
 		e.preventDefault();
 		// console.log(`${dTitle} ${bCreation} ${dMsg}`);
 		// console.log(url);
-		const data = { dTitle, bCreation, dMsg };
+		const data = { dTitle, bCreation, dMsg, autor };
 		setIsLoading(true);
 		try {
 			const res = await axios.post(url, data);
+			console.log(res);
+			console.log(data);
 			setIsLoading(false);
 			//console.log(res);
 			if (!res.data.success) {
@@ -32,6 +36,7 @@ const CreateForm = () => {
 				}, 3500);
 			} else {
 				setIsSuccess(true);
+				setPostId(res.data.archive._id);
 				setTimeout(() => {
 					setIsSuccess(false);
 				}, 3500);
@@ -50,7 +55,10 @@ const CreateForm = () => {
 		<>
 			{isSuccess ? (
 				<Alert key={'success'} variant={'success'}>
-					Post Created successfully!
+					Post Created successfully!{' '}
+					<Alert.Link href={`/archive/${postId}`}>
+						View it here!
+					</Alert.Link>
 				</Alert>
 			) : (
 				''
@@ -69,6 +77,7 @@ const CreateForm = () => {
 					<Form.Group className="mb-3" controlId="formDimName">
 						<Form.Label>Dimension name:</Form.Label>
 						<Form.Control
+							required
 							value={dTitle}
 							onChange={(e) => {
 								setDTitle(e.target.value);
@@ -77,12 +86,26 @@ const CreateForm = () => {
 							placeholder="Enter the name dimension name"
 						/>
 						<Form.Text className="text-muted">
-							All dimensions must begin with a "D", for example "D-431" or "D-32A"
+							All dimensions must begin with a "D", for example "D-431" or "D-32A" -
+							unknown can also be written
 						</Form.Text>
+					</Form.Group>
+					<Form.Group className="mb-3" controlId="formAutor">
+						<Form.Label>Autor:</Form.Label>
+						<Form.Control
+							required
+							value={autor}
+							onChange={(e) => {
+								setAutor(e.target.value);
+							}}
+							type="text"
+							placeholder="Researcher name"
+						/>
 					</Form.Group>
 					<Form.Group className="mb-3" controlId="formDimBDate">
 						<Form.Label>Believed creation date</Form.Label>
 						<Form.Control
+							required
 							value={bCreation}
 							onChange={(e) => {
 								setBCreation(e.target.value);

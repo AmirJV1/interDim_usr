@@ -13,6 +13,7 @@ const Archives = () => {
 	const [archives, setArchives] = useState([]);
 	const [isError, setIsError] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
+	const [counterLoadMore, setCounterLoadMore] = useState(0);
 	const url = `${process.env.REACT_APP_API_URL}archive/rand`;
 
 	//obtener la info
@@ -34,6 +35,7 @@ const Archives = () => {
 	const loadMore = async () => {
 		getData();
 		setIsLoading(true);
+		setCounterLoadMore(counterLoadMore + 1);
 	};
 
 	return (
