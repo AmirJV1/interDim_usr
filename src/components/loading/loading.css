@@ -1,0 +1,13 @@
+.loading-container {
+	min-width: 300px;
+	min-height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.loading-container b {
+	font-size: larger;
+	margin-top: 20px;
+    text-align: center;
+}

@@ -1,16 +1,17 @@
 import React from 'react';
-import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
+import { Nav, Navbar, Container } from 'react-bootstrap';
+// import {  NavDropdown  } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 const MainNavbar = () => {
 	return (
 		<>
 			<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
 				<Container>
-					<Navbar.Brand href="#">
-						<Link style={{ textDecoration: 'none', color: 'white' }} to="/archives">
+					
+						<Link className="navbar-brand" style={{ textDecoration: 'none', color: 'white' }} to="/archives">
 							Dim Archives
 						</Link>
-					</Navbar.Brand>
+					
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Collapse id="responsive-navbar-nav">
 						<Nav className="me-auto">
@@ -29,10 +30,10 @@ const MainNavbar = () => {
 							</NavDropdown> */}
 						</Nav>
 						<Nav>
-							<Link className="nav-link" to="/follow" target="_blank">
+							<Link className="nav-link " to="/follow" target="_blank">
 								Follow us!
 							</Link>
-							<Link className="nav-link" to="/support" target="_blank">
+							<Link className="nav-link " to="/support" target="_blank">
 								Support us!
 							</Link>
 						</Nav>

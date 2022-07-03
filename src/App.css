@@ -6,7 +6,12 @@
 html {
 	background-color: rgb(33, 37, 41) !important;
 	color: #fff;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	margin:0;
+	padding:0;
 }
-* {
-	white-space: pre-wrap !important;
+body {
+	padding: o;
 }
+
